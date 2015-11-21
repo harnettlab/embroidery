@@ -1,10 +1,17 @@
 embroidery
 ==========
 
-MATLAB m-files for viewing and writing .exp embroidery machine files.
+MATLAB m-files for viewing and writing .exp embroidery machine files. 
+Nov 2015 update: viewing .pes files is now possible using pesdecode2.m
 
-With this you can generate a plot within MATLAB, then output it to be stitched.
-Tested on a borrowed Bernina embroidery machine. The first stitch is at position 0,0. 
+And expalignjump.m will rotate and translate your x-y data to a pair of alignment marks, then write an .exp file.
+It will also make a centered 9x9cmbox in a 2nd color so the machine won't force your aligned data to the center.
+These .exp files were translated to .pes format using the StitchBuddy iPad app and worked on a Brother machine.
+Test data for expalignjump is available in stitchXY.mat, which contains stitchxdata and stitchydata.
+ expalignjump(stitchxdata,stitchydata,[-30 0 30 0]) will create a file aligned with marks at (-30,0) and (30,0) mm.
+
+With expwrite.m you can generate a plot within MATLAB, then output it to be stitched.
+The exp files it produced ran on a borrowed Bernina embroidery machine. The first stitch is at position 0,0. 
 The first stitch tends to unravel--further work is needed here
 (Or just stitch back and forth with the machine before starting the embroidery pattern)
 
